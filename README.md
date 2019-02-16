@@ -1,2 +1,2 @@
-# React-NativeDataGrid
+# nativedatagrid
 A DataGrid with Native components
