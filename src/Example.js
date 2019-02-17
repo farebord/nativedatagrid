@@ -5,7 +5,7 @@ import data from './data.json'
 
 
 export default () => (
-  <DataGrid 
+  <DataGrid
     columns={columns}
     data={data}
     loading={false}
