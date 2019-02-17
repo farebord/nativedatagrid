@@ -5,6 +5,7 @@ import './DataGrid.css'
 import Cell from './Cell'
 
 class DataGrid extends React.Component {
+
     constructor(props){
         super(props)
 
@@ -85,7 +86,9 @@ DataGrid.defaultProps = {
 
 DataGrid.propTypes = {
     columns: PropTypes.array.isRequired,
-    data: PropTypes.array,
+    data: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired
+    })),
     loading: PropTypes.bool,
     loadingMessage: PropTypes.string,
     noDataMessage: PropTypes.string,
