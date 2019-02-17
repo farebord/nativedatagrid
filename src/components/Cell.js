@@ -17,12 +17,12 @@ class Cell extends React.Component {
     }
     onCancel(value){
         const { onCancel } = this.props
-        if(onCancel) onCancel(value)
+        onCancel(value)
         this.switchRenderMode()
     }
     onSave(value){
         const { onChange } = this.props
-        if(onChange) onChange(value)
+        onChange(value)
         this.switchRenderMode()
     }
     switchEditMode(){
@@ -32,9 +32,7 @@ class Cell extends React.Component {
             this.setState({editing: true})
     }
     switchRenderMode(){
-        const { editing } = this.state
-        if(editing)
-            this.setState({editing: false})
+        this.setState({editing: false})
     }
     renderValue(value){
         const { type, renderValue } = this.props
@@ -92,7 +90,7 @@ Cell.propTypes = {
     renderValue: PropTypes.func,
     editable: PropTypes.bool.isRequired,
     renderEdit: PropTypes.func,
-    onCancel: PropTypes.func,
+    onCancel: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired
 }
 

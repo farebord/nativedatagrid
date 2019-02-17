@@ -15,11 +15,11 @@ class DataGrid extends React.Component {
     }
     onCellChange(value, column, row){
         const { onCellChange } = this.props
-        if(onCellChange) onCellChange(Object.assign({}, row, {[column]: value}))
+        onCellChange(Object.assign({}, row, {[column]: value}))
     }
     onCellCancel(value, column, row){
         const { onCellCancel } = this.props
-        if(onCellCancel) onCellCancel(row, Object.assign({[column]: value}))
+        onCellCancel(row, Object.assign({[column]: value}))
     }
     isCellEditable(column){
         const { editable } = this.props
@@ -95,8 +95,8 @@ DataGrid.propTypes = {
     selectable: PropTypes.bool,
     editable: PropTypes.bool,
     onSelectedChange: PropTypes.func,
-    onCellChange: PropTypes.func,
-    onCellCancel: PropTypes.func
+    onCellChange: PropTypes.func.isRequired,
+    onCellCancel: PropTypes.func.isRequired
 }
 
 export default DataGrid
